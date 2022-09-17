@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HelloWorldTest {
     @Test
@@ -13,6 +14,4 @@ class HelloWorldTest {
         var stringObject = new HelloWorld();
         assertEquals("Hello Sergii", stringObject.printName("Sergii"));
     }
-
-
 }
