@@ -5,13 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HelloWorldTest {
     @Test
     void stringHelloName() {
-        var stringObject = new HelloWorld();
-        assertEquals("Hello Ostap", stringObject.printName("Ostap"));
+        assertEquals("Hello Ostap", HelloWorld.printName("Ostap"));
     }
 
     @Test
     void stringHelloName2() {
-        var stringObject = new HelloWorld();
-        assertEquals("Hello Sergii", stringObject.printName("Sergii"));
+        assertEquals("Hello Sergii", HelloWorld.printName("Sergii"));
     }
 }
