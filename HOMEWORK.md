@@ -20,3 +20,7 @@ TO DO:
 ### 25.09.2022
 LEARNED:
 * [JSON](https://www.json.org/json-en.html)
+* Dependency Injection, Inversion of Control
+
+TO DO:
+* Make Controller that returns Animal (that can be Cat or Dog)
