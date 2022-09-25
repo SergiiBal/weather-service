@@ -16,3 +16,7 @@ TO DO:
 * https://spring.io/guides/gs/rest-service/ start from Create a Resource Representation Class
 * Explain http udp tcp (OSI model), port
 * Explain REST (GET, POST, PUT, DELETE) "GET MAPPING"
+
+### 25.09.2022
+LEARNED:
+* [JSON](https://www.json.org/json-en.html)
