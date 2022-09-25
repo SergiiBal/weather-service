@@ -23,6 +23,7 @@ LEARNED:
 * Dependency Injection, Inversion of Control
 * Working with JSON and issuing first HTTP call
 * https://rapidapi.com/natkapral/api/countries-cities
+* Cache(https://spring.io/guides/gs/caching/)
 
 TO DO:
 * Make Controller that returns Animal (that can be Cat or Dog)
