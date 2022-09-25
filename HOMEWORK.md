@@ -21,6 +21,10 @@ TO DO:
 LEARNED:
 * [JSON](https://www.json.org/json-en.html)
 * Dependency Injection, Inversion of Control
+* Working with JSON and issuing first HTTP call
+* https://rapidapi.com/natkapral/api/countries-cities
 
 TO DO:
 * Make Controller that returns Animal (that can be Cat or Dog)
+* Make /country/city-details that will return passed City Details using Countries-Cities API (accepts geonameid that you find from https://www.geonames.org/)
+* Make CodeWars task and add it here as Service with JUnit test + RestController (/codewars/task/{param})
