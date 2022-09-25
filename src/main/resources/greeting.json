@@ -1,0 +1,19 @@
+{
+  "id": 6,
+  "content": "Hello, Sergii!",
+  "kozas": [
+    {
+      "name": "koza1"
+    },
+    {
+      "name": "koza2"
+    }
+  ],
+  "numbers": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}

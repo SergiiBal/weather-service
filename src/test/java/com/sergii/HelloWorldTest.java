@@ -1,3 +1,6 @@
+package com.sergii;
+
+import com.sergii.HelloWorld;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
