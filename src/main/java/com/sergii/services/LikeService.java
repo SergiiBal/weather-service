@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class LikeService {
     public String whoLikesIt(String... names) {
+       // TODO: CHANGE IF TO SWITCH STATEMENTS, RESOLCE WARNINGS
         String[] inputNames = names;
         String resultString = "";
         if (inputNames.length == 0) {
