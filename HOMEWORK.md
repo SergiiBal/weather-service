@@ -29,3 +29,13 @@ TO DO:
 * Make Controller that returns Animal (that can be Cat or Dog)
 * Make /country/city-details that will return passed City Details using Countries-Cities API (accepts geonameid that you find from https://www.geonames.org/)
 * Make CodeWars task and add it here as Service with JUnit test + RestController (/codewars/task/{param})
+
+### 05.10.2022
+LEARNED:
+* method Overloadind and Overriding
+
+TO DO:
+* Create WeatherController, which for given adress and date gives weather
+  * Use geocoding from https://rapidapi.com/googlecloud/api/google-maps-geocoding for getting coordinates
+  * Using timeMachine and Forecast from https://rapidapi.com/darkskyapis/api/dark-sky get weather details
+  * Your response should be readable text
