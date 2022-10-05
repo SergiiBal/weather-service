@@ -22,7 +22,7 @@ public class LikeController {
 
     @Cacheable("LikeList")
     @GetMapping("/names")
-    public String listNames(@RequestParam(name = "key", defaultValue = "") String key) {
+    public String listNames(@RequestParam(name = "key", defaultValue = "") String[] key) {
         System.out.println("Typing names..");
         return likeService.whoLikesIt(key);
     }
