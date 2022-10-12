@@ -39,3 +39,23 @@ TO DO:
   * Use geocoding from https://rapidapi.com/googlecloud/api/google-maps-geocoding for getting coordinates
   * Using timeMachine and Forecast from https://rapidapi.com/darkskyapis/api/dark-sky get weather details
   * Your response should be readable text
+
+### 12.10.2022
+LEARNED: 
+* working with IntelliJ warnings, inspecting entire code
+* repeated @RequestParam vs @PathVariable differences and use case
+* worked with RestTemplate, understood ResponseType
+* learned Java Class(class Class) and use cases of it (dynamic response, Java Reflections API)
+TO DO:
+* inspect entire code and resolve warnings when applicable
+* read more about Java Reflections and make small example
+* after finishing testing Weather part with coordinates, extract businnes logic into service and make new URL as requested in previous homework
+
+/weather?address=Kyiv,Ukraine&date=12-10-2022
+
+"it will be raining in Kyiv, Ukraine on 12-10-2022"
+
+/weather?address=Kyiv,Ukraine
+
+"it is raining in Kyiv, Ukraine today"
+
