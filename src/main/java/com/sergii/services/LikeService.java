@@ -38,7 +38,7 @@ public class LikeService {
                 System.out.println(resultString);
                 break;
             }
-            case 4: {
+            default: {
                 for (int i = 0; i < inputNames.length; i++) {
                     resultString = (inputNames[0] + ", " + inputNames[1] + " and " + (inputNames.length - 2) + " others like this");
                 }

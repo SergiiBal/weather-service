@@ -1,6 +1,7 @@
 package com.sergii.controllers;
 
 import com.sergii.models.CityResponse;
+import com.sergii.models.CountriesResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.*;
@@ -21,15 +22,27 @@ public class CityController {
 
     @Cacheable("CityDetails")
     @GetMapping("/cityDetails")
-    public CityResponse cityDetails(@RequestParam Integer geonameid) {
-        RequestEntity<Void> requestEntity = RequestEntity.get("https://countries-cities.p.rapidapi.com/location/city/{geonameid", geonameid)
-                .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
-                .header("X-RapidAPI-Host", "countries-cities.p.rapidapi.com")
-                .build();
+//    public CityResponse cityDetails(@RequestParam Integer geonameid) {
+//        RequestEntity<Void> requestEntity = RequestEntity.get("https://countries-cities.p.rapidapi.com/location/city/{geonameid}", geonameid)
+//                .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
+//                .header("X-RapidAPI-Host", "countries-cities.p.rapidapi.com")
+//                .build();
+
+        public CityResponse cityDetails(@RequestParam(name = "geonameid", defaultValue = "") String geonameid) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb");
+            headers.set("X-RapidAPI-Host", "countries-cities.p.rapidapi.com");
+            HttpEntity<?> requestEntity = new HttpEntity<>(headers);
 
         System.out.println("Making Rest Call");
 
+//        ResponseEntity<CityResponse> responseEntity = restTemplate.exchange(
+//                requestEntity,
+//                CityResponse.class);
+//        return responseEntity.getBody();
         ResponseEntity<CityResponse> responseEntity = restTemplate.exchange(
+                "https://countries-cities.p.rapidapi.com/location/city/",
+                HttpMethod.GET,
                 requestEntity,
                 CityResponse.class);
         return responseEntity.getBody();

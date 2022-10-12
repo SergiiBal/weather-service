@@ -6,8 +6,8 @@ public record CityResponse(
         Integer population,
         Double latitude,
         Double longitude,
-        Division division
-) {
+        Division division)
+ {
 }
 
 record Division(String code, Integer geonameid, String name, String type) {

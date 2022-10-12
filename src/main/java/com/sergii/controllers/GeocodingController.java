@@ -22,7 +22,7 @@ public class GeocodingController {
     @Cacheable("Address")
     @GetMapping("/address")
     public GeocodingResponse geocodingDetails(@RequestParam String address) {
-        RequestEntity<Void> requestEntity = RequestEntity.get("https://google-maps-geocoding.p.rapidapi.com/geocode/{address}", address)
+        RequestEntity<Void> requestEntity = RequestEntity.get("https://google-maps-geocoding.p.rapidapi.com/geocode/json", address)
                 .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
                 .header("X-RapidAPI-Host", "google-maps-geocoding.p.rapidapi.com")
                 .build();
@@ -36,7 +36,7 @@ public class GeocodingController {
     }
 
     @Cacheable("Address2")
-    @GetMapping("/adress2/{address}")
+    @GetMapping("/address2/{address}")
     public String geocodingDetails2(@PathVariable String address) {
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb");
@@ -46,13 +46,14 @@ public class GeocodingController {
         System.out.println("Making Rest Call");
 
         ResponseEntity<Map> responseEntity = restTemplate.exchange(
-                "https://google-maps-geocoding.p.rapidapi.com/geocode/",
+                "https://google-maps-geocoding.p.rapidapi.com/geocode/json",
                 HttpMethod.GET,
                 requestEntity,
                 Map.class,
                 address);
        Map body = responseEntity.getBody();
        return (String) body.get("latitude");
+       // return responseEntity.getBody().toString();
     //    return (String) responseEntity.getBody().get("latlng");
     }
 }
