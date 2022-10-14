@@ -34,12 +34,15 @@ public class GeocodingController {
                 .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
                 .header("X-RapidAPI-Host", "google-maps-geocoding.p.rapidapi.com")
                 .build();
-        ResponseEntity<String> responseEntity = restTemplate.exchange(
+        ResponseEntity<GeocodingResponse> responseEntity = restTemplate.exchange(
                 requestEntity,
-                String.class);
+                GeocodingResponse.class);
         // results[0]/geometry/location/lat,lng
-        String body = responseEntity.getBody();
-        return body.results[0].geometry().location().get("lat","lng");
+      // String body = responseEntity.getBody();
+
+        Double lat = (Double) responseEntity.getBody().results().get(0).geometry().location().lat();
+        Double lng = (Double) responseEntity.getBody().results().get(0).geometry().location().lng();
+        return lat +":+)" + lng;
     }
 
     @Cacheable("Address2")
