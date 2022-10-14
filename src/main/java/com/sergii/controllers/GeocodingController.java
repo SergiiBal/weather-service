@@ -1,5 +1,8 @@
 package com.sergii.controllers;
 
+import com.sergii.models.Geometry;
+import com.sergii.models.Location;
+import com.sergii.models.Result;
 import com.sergii.models.GeocodingResponse;
 import com.sergii.services.GeocodingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +38,8 @@ public class GeocodingController {
                 requestEntity,
                 String.class);
         // results[0]/geometry/location/lat,lng
-        return responseEntity.getBody();
+        String body = responseEntity.getBody();
+        return body.results[0].geometry().location().get("lat","lng");
     }
 
     @Cacheable("Address2")
