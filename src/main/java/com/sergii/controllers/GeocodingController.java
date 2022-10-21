@@ -1,14 +1,15 @@
 package com.sergii.controllers;
 
-import com.sergii.models.Geometry;
-import com.sergii.models.Location;
-import com.sergii.models.Result;
 import com.sergii.models.GeocodingResponse;
 import com.sergii.services.GeocodingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -34,20 +35,15 @@ public class GeocodingController {
                 .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
                 .header("X-RapidAPI-Host", "google-maps-geocoding.p.rapidapi.com")
                 .build();
-        ResponseEntity<GeocodingResponse> responseEntity = restTemplate.exchange(
+        ResponseEntity<String> responseEntity = restTemplate.exchange(
                 requestEntity,
-                GeocodingResponse.class);
-        // results[0]/geometry/location/lat,lng
-      // String body = responseEntity.getBody();
-
-        Double lat = (Double) responseEntity.getBody().results().get(0).geometry().location().lat();
-        Double lng = (Double) responseEntity.getBody().results().get(0).geometry().location().lng();
-        return lat +":+)" + lng;
+                String.class);
+        return responseEntity.getBody();
     }
 
     @Cacheable("Address2")
     @GetMapping("/address2")
-    public GeocodingResponse geocodingDetails2(@RequestParam String address) {
+    public String geocodingDetails2(@RequestParam String address) {
         return geocodingService.getLocation(address);
     }
 
@@ -65,8 +61,8 @@ public class GeocodingController {
         Map map = responseEntity.getBody();
         List results = (List) map.get("results");
         Map result = (Map) results.get(0);
-        Map geometry = (Map)result.get("geometry");
-        Map location = (Map)geometry.get("location");
+        Map geometry = (Map) result.get("geometry");
+        Map location = (Map) geometry.get("location");
         Double lat = (Double) location.get("lat");
         Double lng = (Double) location.get("lng");
         return lat + ":" + lng;

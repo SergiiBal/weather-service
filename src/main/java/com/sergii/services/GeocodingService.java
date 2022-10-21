@@ -16,7 +16,7 @@ public class GeocodingService {
         this.restTemplate = restTemplate;
     }
 
-    public GeocodingResponse getLocation (String address) {
+    public String getLocation (String address) {
         RequestEntity<Void> requestEntity = RequestEntity.get("https://google-maps-geocoding.p.rapidapi.com/geocode/json?address={address}", address)
                 .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
                 .header("X-RapidAPI-Host", "google-maps-geocoding.p.rapidapi.com")
@@ -25,8 +25,9 @@ public class GeocodingService {
                 requestEntity,
                 GeocodingResponse.class);
         // results[0]/geometry/location/lat,lng
-        return responseEntity.getBody();
-        // TODO: Change to location only as response   return responseEntity.getBody().results().get(0);
+        Double lat = (Double) responseEntity.getBody().results().get(0).geometry().location().lat();
+        Double lng = (Double) responseEntity.getBody().results().get(0).geometry().location().lng();
+        return lat + ":" + lng;
     }
 
 }
