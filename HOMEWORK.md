@@ -50,6 +50,7 @@ TO DO:
 * inspect entire code and resolve warnings when applicable
 * read more about Java Reflections and make small example
 * after finishing testing Weather part with coordinates, extract businnes logic into service and make new URL as requested in previous homework
+* Use new weather service https://rapidapi.com/weatherapi/api/weatherapi-com?fbclid=IwAR06qsqCjD7RUB6wCQSDs5OZrbug1Rsg9XP8Z03GSaIKEMckfEOIdLqMtkg
 
 /weather?address=Kyiv,Ukraine&date=12-10-2022
 

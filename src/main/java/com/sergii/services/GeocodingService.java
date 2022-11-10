@@ -27,7 +27,9 @@ public class GeocodingService {
         // results[0]/geometry/location/lat,lng
         Double lat = (Double) responseEntity.getBody().results().get(0).geometry().location().lat();
         Double lng = (Double) responseEntity.getBody().results().get(0).geometry().location().lng();
-        return lat + ":" + lng;
+        return lat + "," + lng + "&" + address;
     }
+ //   latlng = getLocation(address);
+//    getWeather( latlng, time)
 
 }

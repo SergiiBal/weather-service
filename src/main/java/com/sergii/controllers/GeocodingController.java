@@ -40,7 +40,7 @@ public class GeocodingController {
                 String.class);
         return responseEntity.getBody();
     }
-
+// http://localhost:8080/cities/address2?address=164%20Townsend%20St.,%20San%20Francisco,%20CA
     @Cacheable("Address2")
     @GetMapping("/address2")
     public String geocodingDetails2(@RequestParam String address) {
