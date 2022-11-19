@@ -16,7 +16,7 @@ public class GeocodingService {
         this.restTemplate = restTemplate;
     }
 
-    public String getLocation (String address) {
+    public WeatherDetails getLocation(String address) {
         RequestEntity<Void> requestEntity = RequestEntity.get("https://google-maps-geocoding.p.rapidapi.com/geocode/json?address={address}", address)
                 .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
                 .header("X-RapidAPI-Host", "google-maps-geocoding.p.rapidapi.com")
@@ -24,12 +24,9 @@ public class GeocodingService {
         ResponseEntity<GeocodingResponse> responseEntity = restTemplate.exchange(
                 requestEntity,
                 GeocodingResponse.class);
-        // results[0]/geometry/location/lat,lng
         Double lat = (Double) responseEntity.getBody().results().get(0).geometry().location().lat();
         Double lng = (Double) responseEntity.getBody().results().get(0).geometry().location().lng();
-        return lat + "," + lng + "&" + address;
+        WeatherDetails weatherDetails = new WeatherDetails(lat.toString(), lng.toString(), address);
+        return weatherDetails;
     }
- //   latlng = getLocation(address);
-//    getWeather( latlng, time)
-
 }
