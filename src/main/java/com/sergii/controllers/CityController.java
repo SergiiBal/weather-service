@@ -49,6 +49,7 @@ public class CityController {
                 Map.class,
                 countryCode);
         Map body = responseEntity.getBody();
+        assert body != null;
         return (Integer) body.get("total_cities");
     }
 }

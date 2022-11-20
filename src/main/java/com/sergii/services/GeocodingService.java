@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Objects;
+
 @Service
 public class GeocodingService {
     private final RestTemplate restTemplate;
@@ -24,9 +26,6 @@ public class GeocodingService {
         ResponseEntity<GeocodingResponse> responseEntity = restTemplate.exchange(
                 requestEntity,
                 GeocodingResponse.class);
-        Double lat = (Double) responseEntity.getBody().results().get(0).geometry().location().lat();
-        Double lng = (Double) responseEntity.getBody().results().get(0).geometry().location().lng();
-        WeatherDetails weatherDetails = new WeatherDetails(lat.toString(), lng.toString(), address);
-        return weatherDetails;
+        return new WeatherDetails(Objects.requireNonNull(responseEntity.getBody()).results().get(0).geometry().location().lat().toString(), responseEntity.getBody().results().get(0).geometry().location().lng().toString(), address);
     }
 }

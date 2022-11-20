@@ -26,6 +26,7 @@ public class ForecastService {
                 requestEntity,
                 HistoricalWeatherRoot.class);
         HistoricalWeatherRoot body = responseEntity.getBody();
+        assert body != null;
         String resultWeather = body.forecast.forecastday.get(0).day.condition.text;
         String minTemperature = String.valueOf(body.forecast.forecastday.get(0).day.mintemp_c);
         String maxTemperature = String.valueOf(body.forecast.forecastday.get(0).day.maxtemp_c);
