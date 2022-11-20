@@ -22,13 +22,10 @@ public class CityController {
     @Cacheable("CityDetails")
     @GetMapping("/cityDetails")
     public CityResponse cityDetails(@RequestParam Integer geonameid) {
-        RequestEntity<Void> requestEntity = RequestEntity.get("https://countries-cities.p.rapidapi.com/location/city/{geonameid", geonameid)
+        RequestEntity<Void> requestEntity = RequestEntity.get("https://countries-cities.p.rapidapi.com/location/city/{geonameid}", geonameid)
                 .header("X-RapidAPI-Key", "0a83e848e8mshe0477d46cde4ac7p180993jsn813f039b57fb")
                 .header("X-RapidAPI-Host", "countries-cities.p.rapidapi.com")
                 .build();
-
-        System.out.println("Making Rest Call");
-
         ResponseEntity<CityResponse> responseEntity = restTemplate.exchange(
                 requestEntity,
                 CityResponse.class);

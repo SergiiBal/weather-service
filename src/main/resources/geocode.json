@@ -1,0 +1,102 @@
+{
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "164",
+          "short_name": "164",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "Townsend Street",
+          "short_name": "Townsend St",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "South Beach",
+          "short_name": "South Beach",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "San Francisco",
+          "short_name": "SF",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "San Francisco County",
+          "short_name": "San Francisco County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "94107",
+          "short_name": "94107",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "164 Townsend St, San Francisco, CA 94107, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 37.7801547,
+            "lng": -122.3919329
+          },
+          "southwest": {
+            "lat": 37.7795512,
+            "lng": -122.3926987
+          }
+        },
+        "location": {
+          "lat": 37.7798156,
+          "lng": -122.3922586
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 37.7811764302915,
+            "lng": -122.3909668197085
+          },
+          "southwest": {
+            "lat": 37.7784784697085,
+            "lng": -122.3936647802915
+          }
+        }
+      },
+      "place_id": "ChIJy5Ij0Nd_j4ARewphNhlNJvE",
+      "types": [
+        "premise"
+      ]
+    }
+  ],
+  "status": "OK"
+}
